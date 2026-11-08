@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sinking Shores | SDG 13 Climate Action</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{--bg:#F0F5FC;--ink:#0B1B33;--mute:#51627D;--sea:#1D5FD1;--deep:#0A1F44;--card:#FFFFFF;--line:#D3DEEE;--warn:#F2B632;--wave:#8EC5FF;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#071428;--ink:#E6EEFB;--mute:#9FB1CE;--sea:#8EC5FF;--deep:#040D1D;--card:#0D2140;--line:#1C3860;--warn:#F2B632;--wave:#2F7FE0;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 "Source Serif 4",Georgia,serif}
+h1,h2,h3,.sans{font-family:Archivo,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px;text-align:center}
+#summary p,.refs p{text-align:left}
+.out{justify-content:center;text-align:left}
+.team{list-style:none;padding:0}
+header{background:linear-gradient(160deg,#0A1F44 0%,#12408F 100%);color:#EAF6F7;padding:56px 0 0;position:relative;overflow:hidden}
+header h1{font-size:clamp(2.2rem,8vw,3.6rem);line-height:1.05;margin:0 0 14px;font-weight:800;letter-spacing:-.02em}
+header p{margin:0 auto 8px;color:#C3D5F0;max-width:34em}
+.tag{display:inline-block;background:var(--warn);color:#2A1D00;font:700 .8rem Archivo,sans-serif;padding:4px 10px;border-radius:4px;margin-bottom:18px}
+.waves{display:block;width:100%;height:60px;margin-top:30px}
+section{padding:44px 0 8px}
+h2{font-size:1.7rem;margin:0 0 14px;letter-spacing:-.01em}
+h3{font-size:1.1rem;margin:26px 0 6px;color:var(--sea)}
+p{margin:0 0 14px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}
+.stat{border-top:4px solid var(--sea);padding:8px 4px 0}
+.stat b{display:block;font:800 1.7rem Archivo,sans-serif;color:var(--sea)}
+.stat span{font-size:.9rem;color:var(--mute);line-height:1.35;display:block}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin-top:18px}
+label{display:block;font:700 .9rem Archivo,sans-serif;margin:14px 0 6px}
+select,input[type=number]{width:100%;padding:10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--sea)}
+.out{display:flex;gap:18px;align-items:flex-end;margin-top:20px}
+.gauge{position:relative;width:70px;height:170px;border:2px solid var(--ink);border-top:none;border-radius:0 0 6px 6px;overflow:hidden;flex:none;background:var(--bg)}
+.gauge .fill{position:absolute;left:0;right:0;bottom:0;background:var(--wave);height:0;transition:height .4s}
+.gauge i{position:absolute;left:0;right:0;border-top:1px dashed var(--mute);font:.65rem Archivo,sans-serif;color:var(--mute);padding-left:3px}
+.big{font:800 2.6rem/1 Archivo,sans-serif;color:var(--sea)}
+.res p{margin:6px 0 0;font-size:.95rem;color:var(--mute);line-height:1.5}
+.note{font-size:.85rem;color:var(--mute)}
+.refs p{padding-left:1.6em;text-indent:-1.6em;font-size:.95rem;line-height:1.55;word-break:break-word}
+.refs a{color:var(--sea)}
+.team li{padding:8px 0;border-bottom:1px solid var(--line)}
+footer{padding:40px 0;color:var(--mute);font-size:.85rem}
+.top a{color:var(--sea);text-decoration:none;font:700 .9rem Archivo,sans-serif;margin-right:14px}
+:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+@media (min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
+@media (prefers-reduced-motion:reduce){.gauge .fill{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<span class="tag">SDG 13 · Climate Action</span>
+<h1>Sinking Shores: when the land drops and the sea rises</h1>
+<p>Coastal people feel sea-level rise up to four times faster than the global average, because the ground under their cities is sinking too.</p>
+<p class="top"><a href="#calc">Try the calculator</a><a href="#summary">Read the summary</a><a href="#refs">References</a></p>
+</div>
+<svg class="waves" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V60 H0Z" fill="#F0F5FC" style="fill:var(--bg)"/></svg>
+</header>
+
+<main class="wrap">
+<section id="calc">
+<h2>How much will your coast rise?</h2>
+<p>Pick a place and a number of years. The tool adds up the rise people on that coast actually experience, using the rates reported in the research below.</p>
+<div class="tool">
+<label for="place">Location</label>
+<select id="place">
+<option value="2.5">Global average (2.5 mm/yr)</option>
+<option value="4.1">Pearl River Delta, China (4.1 mm/yr)</option>
+<option value="2.8">Yangtze River Delta, China (2.6 to 3.0, midpoint 2.8 mm/yr)</option>
+<option value="8.85">Where coastal people actually live: sinking deltas (7.8 to 9.9, midpoint 8.85 mm/yr)</option>
+<option value="custom">Custom rate</option>
+</select>
+<div id="cust" hidden><label for="rate">Your rate (mm per year)</label><input id="rate" type="number" min="0" max="30" step="0.1" value="5"></div>
+<label for="yrs">Years from now: <span id="yv">50</span></label>
+<input id="yrs" type="range" min="5" max="80" step="5" value="50">
+<div class="out" aria-live="polite">
+<div class="gauge" aria-hidden="true"><div class="fill" id="fill"></div><i style="bottom:50%">50 cm</i><i style="bottom:100%;top:0;border-top:none">1 m</i></div>
+<div class="res"><div class="big" id="cm">0 cm</div><p id="txt"></p></div>
+</div>
+<p class="note">Simple straight-line estimate for learning. Real rise can speed up. The gauge tops out at 100 cm.</p>
+</div>
+
+<div class="stats">
+<div class="stat"><b>768M</b><span>people live below 10 m elevation (2015)</span></div>
+<div class="stat"><b>235M</b><span>live inside the 100-year coastal flood plain</span></div>
+<div class="stat"><b>51–70%</b><span>of the rise coastal people feel comes from land subsidence</span></div>
+<div class="stat"><b>US$3,000B</b><span>assets exposed in 136 port cities (2005)</span></div>
+</div>
+</section>
+
+<section id="summary">
+<h2>Academic summary</h2>
+<p>Global coastal zones face an escalating convergence of climate-induced sea-level rise (SLR), storm surges, extreme high tides, and local land subsidence. These pressures create long-term sustainability risks for human settlements and natural ecosystems (Wahl et al., 2018; McBean &amp; Huang, 2017). Coastal areas hold dense cities, industrial centers, and critical infrastructure, with population densities about three times the global inland mean (Bosello &amp; De Cian, 2014). Assessing these hazards means combining risk frameworks, satellite Earth Observation, two-dimensional hydrodynamic models, and macroeconomic assessments (Xu et al., 2016; Zhao et al., 2021).</p>
+
+<h3>SLR rates and subsidence</h3>
+<p>Between 1993 and 2015, global mean relative sea-level rise averaged 2.5 mm/yr. Because people concentrate in rapidly subsiding deltas and alluvial plains, coastal inhabitants experience 7.8 to 9.9 mm/yr, up to four times faster than climate-driven SLR alone. Subsidence accounts for 51% to 70% of that rise (Nicholls et al., 2021b). In China, tide gauges show a 90 mm increase over 30 years, with rates of 4.1 mm/yr in the Pearl River Delta (1959–2011) and 2.6 to 3.0 mm/yr in the Yangtze River Delta (1980–2011) (Zhao et al., 2021). The IPCC AR5 projected a likely upper-bound mean rise of 98 cm by 2100 under RCP8.5, and 2 m or more is a plausible high-end risk (Wahl et al., 2018). The Antarctic ice sheet holds enough ice to raise seas by 58 m if fully melted (McBean &amp; Huang, 2017). Internal Climate Variability adds 2 to 17 cm of irreducible uncertainty globally, which amplifies forced rise by 20% to over 50% in major coastal cities by 2100 (Becker et al., 2023).</p>
+
+<h3>Inundation and exposure</h3>
+<p>Low-elevation coastal zones below 10 m hold about 10% of the world’s people, 768 million in 2015, and 235 million lived in the 100-year flood plain (Wahl et al., 2018; Nicholls et al., 2021b). Coastal urban areas will hold 12.4% of the world’s population by 2060 (McBean &amp; Huang, 2017). In 2005, 136 port cities above one million people held about US$3,000 billion in exposed assets, roughly 5% of Gross World Product (Bosello &amp; De Cian, 2014). In the conterminous US, 20 large and 160 medium municipalities have low-lying land connected to the ocean; on average 9.7% of their land lies at or below 1 m and 35.8% at or below 6 m. In Miami, New Orleans, and Virginia Beach, over 90% lies at or below 6 m (Weiss et al., 2011). In Xiamen, extreme sea levels of 4.75 to 5.86 m would flood 11,600 to 17,100 ha and expose 440,000 to 720,000 residents (Xu et al., 2016). By 2100 under RCP8.5, Manila, Bangkok, Ho Chi Minh City, Yangon, Kolkata, and Chennai become hotspots, where ICV adds at least 20% to 30% of expected rise (Becker et al., 2023).</p>
+
+<h3>Urban and infrastructure impacts</h3>
+<p>Transport networks, industry, and waste facilities along shorelines face tidal flooding, storm surge, and erosion (Griggs, 2020; Nicholls et al., 2021a). LaGuardia, JFK, and Newark airports were flooded during Superstorm Sandy in 2012, and several other US airports are designated vulnerable to high water (Griggs, 2020). Europe has 350,000 to 500,000 historical landfills, about 90% built before modern waste rules, and the US has 945 Superfund sites exposed to climate impacts. In Florida, 1,099 landfills sit in the 100-year coastal flood zone, projected to reach 1,642 by 2100 under RCP8.5 (Nicholls et al., 2021a). Xiamen’s direct losses range from 4,744 to 10,590 million RMB (1.69% to 3.76% of 2012 city GDP), mostly buildings and indoor property, plus 2,537 to 4,175 million RMB of indirect industrial losses (Xu et al., 2016). Market adjustments are a substantial part of total disaster exposure (Bosello &amp; De Cian, 2014).</p>
+
+<h3>Adaptation strategies</h3>
+<p>Good adaptation combines engineering, nature-based protection, land-use planning, and policy fitted to local conditions (Wahl et al., 2018; Bosello &amp; De Cian, 2014). San Francisco and Oakland airports plan barriers against 0.6 to 0.9 m of added rise (Griggs, 2020). Controlling groundwater extraction and managing drainage can keep 20 to 35 million people out of the coastal flood plain by 2050 (Nicholls et al., 2021b). In southern England, defending 80 priority landfills for 100 years costs about £150 million, versus £4.3 billion to remove the waste (Nicholls et al., 2021a). Pairing DInSAR and satellite altimetry with 2D flood models gives decision-makers precise maps of land deformation and shoreline change (Zhao et al., 2021). Accounting for ICV and high-end scenarios in integrated risk frameworks prevents under-engineered defenses (Becker et al., 2023; Xu et al., 2016).</p>
+</section>
+
+<section id="refs" class="refs">
+<h2>References</h2>
+<p>Becker, M., Karpytchev, M., &amp; Hu, A. (2023). Increased exposure of coastal cities to sea-level rise due to internal climate variability. <i>Nature Climate Change, 13</i>(4), 367–374. <a href="https://doi.org/10.1038/s41558-023-01603-w">https://doi.org/10.1038/s41558-023-01603-w</a></p>
+<p>Bosello, F., &amp; De Cian, E. (2014). Climate change, sea level rise, and coastal disasters. A review of modeling practices. <i>Energy Economics, 46</i>, 593–605. <a href="https://doi.org/10.1016/j.eneco.2013.09.002">https://doi.org/10.1016/j.eneco.2013.09.002</a></p>
+<p>Griggs, G. (2020). Coastal airports and rising sea levels. <i>Journal of Coastal Research, 36</i>(5), 1079–1092. <a href="https://doi.org/10.2112/JCOASTRES-D-20A-00004.1">https://doi.org/10.2112/JCOASTRES-D-20A-00004.1</a></p>
+<p>McBean, E., &amp; Huang, J. J. (2017). Sustainability risks of coastal cities from climate change. <i>The Global Environmental Engineers, 4</i>, 1–9. <a href="https://doi.org/10.15377/2410-3624.2017.04.01.1">https://doi.org/10.15377/2410-3624.2017.04.01.1</a></p>
+<p>Nicholls, R. J., Beaven, R. P., Stringfellow, A., Monfort, D., Le Cozannet, G., Wahl, T., Gebert, J., Wadey, M., Arns, A., Spencer, K. L., Reinhart, D., Heimovaara, T., Santos, V. M., Enríquez, A. R., &amp; Cope, S. (2021a). Coastal landfills and rising sea levels: A challenge for the 21st century. <i>Frontiers in Marine Science, 8</i>, Article 710342. <a href="https://doi.org/10.3389/fmars.2021.710342">https://doi.org/10.3389/fmars.2021.710342</a></p>
+<p>Nicholls, R. J., Lincke, D., Hinkel, J., Brown, S., Vafeidis, A. T., Meyssignac, B., Hanson, S. E., Merkens, J.-L., &amp; Fang, J. (2021b). A global analysis of subsidence, relative sea-level change and coastal flood exposure. <i>Nature Climate Change, 11</i>(4), 338–342. <a href="https://doi.org/10.1038/s41558-021-00993-z">https://doi.org/10.1038/s41558-021-00993-z</a></p>
+<p>Wahl, T., Brown, S., Haigh, I. D., &amp; Nilsen, J. E. Ø. (2018). Coastal sea levels, impacts, and adaptation [Editorial]. <i>Journal of Marine Science and Engineering, 6</i>(1), Article 19. <a href="https://doi.org/10.3390/jmse6010019">https://doi.org/10.3390/jmse6010019</a></p>
+<p>Weiss, J. L., Overpeck, J. T., &amp; Strauss, B. (2011). Implications of recent sea level rise science for low-elevation areas in coastal cities of the conterminous U.S.A.: A letter. <i>Climatic Change, 105</i>(3–4), 635–645. <a href="https://doi.org/10.1007/s10584-011-0024-x">https://doi.org/10.1007/s10584-011-0024-x</a></p>
+<p>Xu, L., He, Y., Huang, W., &amp; Cui, S. (2016). A multi-dimensional integrated approach to assess flood risks on a coastal city, induced by sea-level rise and storm tides. <i>Environmental Research Letters, 11</i>(1), Article 014001. <a href="https://doi.org/10.1088/1748-9326/11/1/014001">https://doi.org/10.1088/1748-9326/11/1/014001</a></p>
+<p>Zhao, Q., Pepe, A., Devlin, A., Zhang, S., Falabella, F., Zeni, G., Wang, Q., Ding, J., Dong, D., Liu, M., Xu, Q., Lei, X., &amp; Pan, J. (2021). Impact of sea-level-rise and human activities in coastal regions: An overview. <i>Journal of Geodesy and Geoinformation Science, 4</i>(1), 124–143. <a href="https://doi.org/10.11947/j.JGGS.2021.0115">https://doi.org/10.11947/j.JGGS.2021.0115</a></p>
+</section>
+</main>
+<footer><div class="wrap">GEO217 Climate Change and Sustainability. Group project on SDG 13, Climate Action.<br><strong>Created by Salma Magdy</strong></div></footer>
+
+<script>
+(function(){
+var place=document.getElementById('place'),rate=document.getElementById('rate'),cust=document.getElementById('cust'),
+yrs=document.getElementById('yrs'),yv=document.getElementById('yv'),cm=document.getElementById('cm'),
+txt=document.getElementById('txt'),fill=document.getElementById('fill');
+function upd(){
+var r=place.value==='custom'?parseFloat(rate.value)||0:parseFloat(place.value);
+cust.hidden=place.value!=='custom';
+var y=parseInt(yrs.value,10);yv.textContent=y;
+var total=r*y/10;
+cm.textContent=total.toFixed(1)+' cm';
+fill.style.height=Math.min(100,total)+'%';
+var x=r/2.5;
+txt.textContent='By '+(2026+y)+', at '+r+' mm/yr. '+(Math.abs(x-1)<0.05?'This matches the global average.':'That is '+x.toFixed(1)+' times the global average rate of 2.5 mm/yr.');
+}
+[place,rate,yrs].forEach(function(e){e.addEventListener('input',upd)});
+upd();
+})();
+</script>
+</body>
+</html>
